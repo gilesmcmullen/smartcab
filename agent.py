@@ -93,7 +93,7 @@ class LearningAgent(Agent):
         #   Then, for each action available, set the initial Q-value to 0.0
         if self.learning:
             if self.Q.get(state) == None:
-                self.Q[state] = dict()
+                self.Q[state] = dict()  #with help from forum
                 for action in self.valid_actions:
                     self.Q[state][action] = 0.0
                 #print 'Self.Q is {}'.format(self.Q[state])
@@ -144,7 +144,7 @@ class LearningAgent(Agent):
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
         if self.learning:
 
-            self.Q[state][action] = self.Q[state][action] + self.alpha * (reward - self.Q[state][action])
+            self.Q[state][action] = self.Q[state][action] + self.alpha * (reward - self.Q[state][action])#with help from forum
             #print 'Qrate is now {}'.format(self.Q[state][action])
         return
 
